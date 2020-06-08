@@ -1,16 +1,10 @@
 import Button from '@material-ui/core/Button';
-import FormControl from '@material-ui/core/FormControl';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FormLabel from '@material-ui/core/FormLabel';
-import Input from '@material-ui/core/Input';
-import InputLabel from '@material-ui/core/InputLabel';
-import Radio from '@material-ui/core/Radio';
-import RadioGroup from '@material-ui/core/RadioGroup';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import React, { useContext } from 'react';
 import Navbar from '../components/NavBar';
 import { UserContext } from '../UserComponent/UserContext';
+import axios from 'axios';
 const useStyles = makeStyles((theme) => ({
 	root: {
 		'& > *': {
@@ -20,14 +14,40 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function ComposedTextField() {
-	const [ name, setName ] = React.useState('Composed TextField');
-	const classes = useStyles();
-
 	const { user } = useContext(UserContext);
 	const [ users, setUser ] = user;
+	const userEmail = localStorage.getItem('userEmail');
+	const [ item, setItem ] = React.useState({
+		firstName: users.firstName,
+		lastName: users.lastName,
+		userName: users.userName,
+		email: users.email,
+		gender: users.gender
+	});
+
+	// const [ name, setName ] = React.useState('Composed TextField');
+	const classes = useStyles();
 
 	const handleChange = (event) => {
-		setName(event.target.value);
+		event.persist();
+		const target = event.target;
+		const value = target.value;
+		setItem({ ...item, [event.target.name]: value });
+	};
+
+	const handleSubmit = async (event) => {
+		event.preventDefault();
+		const item1 = { ...item };
+		console.log('+++++++');
+		console.log(item1);
+
+		console.log('KEMA', item1);
+		//setUserEmail(item1.email);
+		try {
+			axios.patch(`http://localhost:3001/api/user/${userEmail}`, item1);
+		} catch (err) {
+			console.log(err);
+		}
 	};
 
 	return (
@@ -35,67 +55,69 @@ export default function ComposedTextField() {
 			<Navbar />
 
 			<div style={{ display: 'flex', flexDirection: 'column' }}>
-				<form className={classes.root} noValidate autoComplete="off">
+				<form className={classes.root} onSubmit={handleSubmit}>
 					<div>
 						<TextField
 							label="First Name"
 							type="text"
 							name="firstName"
 							id="firstName"
-							value={users.firstName}
+							value={item.firstName}
+							onChange={handleChange}
+							placeholder="Enter your First Name"
+						/>
+					</div>
+					<div>
+						<TextField
+							label="Last Name"
+							type="text"
+							name="lastName"
+							id="lastName"
+							value={item.lastName}
+							onChange={handleChange}
+							placeholder="Enter your Last Name"
+						/>
+					</div>
+					<div>
+						<TextField
+							label="Email"
+							type="email"
+							name="email"
+							id="email"
+							value={item.email}
 							onChange={handleChange}
 							placeholder="Enter your Email"
 						/>
 					</div>
 					<div>
-						<FormControl>
-							<InputLabel htmlFor="component-simple">Last Name</InputLabel>
-							<Input id="component-simple" value={users.lastName} onChange={handleChange} />
-						</FormControl>
+						<TextField
+							label="User Name"
+							type="text"
+							name="userName"
+							id="userName"
+							value={item.userName}
+							onChange={handleChange}
+							placeholder="Enter your User Name"
+						/>
 					</div>
+
 					<div>
-						<FormControl>
-							<TextField
-								type="email"
-								label="Email"
-								name="email"
-								id="email"
-								value={users.email}
-								onChange={handleChange}
-								placeholder="Enter your Email"
-							/>
-						</FormControl>
+						<input
+							type="radio"
+							checked={item.gender === 'male'}
+							value="male"
+							onChange={handleChange}
+							name="Male"
+						/>Male
+						<input
+							type="radio"
+							checked={item.gender === 'female'}
+							value="female"
+							onChange={handleChange}
+							name="Female"
+						/>Female
 					</div>
-					<div>
-						<FormControl>
-							<TextField
-								type="username"
-								label="Username"
-								name="username"
-								id="username"
-								value={users.userName}
-								onChange={handleChange}
-								placeholder="Enter your Username"
-							/>
-						</FormControl>
-					</div>
-					<div>
-						<FormControl component="fieldset">
-							<FormLabel component="legend">Gender</FormLabel>
-							<RadioGroup aria-label="gender" name="gender1" value={name} onChange={handleChange}>
-								<FormControlLabel value="female" control={<Radio />} label="Female" />
-								<FormControlLabel value="male" control={<Radio />} label="Male" />
-								<FormControlLabel value="other" control={<Radio />} label="Other" />
-								<FormControlLabel
-									value="disabled"
-									disabled
-									control={<Radio />}
-									label="(Disabled option)"
-								/>
-							</RadioGroup>
-						</FormControl>
-					</div>
-					<Button variant="contained" color="primary">
+					<Button variant="contained" color="primary" type="submit">
 						SAVE
 					</Button>
 				</form>
