@@ -55,7 +55,7 @@ export const ChangePassword = () => {
 							id="password"
 							value={item.password}
 							onChange={handleChange}
-							placeholder="Enter your password"
+							placeholder="Enter your new  password"
 						/>
 					</div>
 					<div>
