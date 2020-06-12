@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Grid from '@material-ui/core/Grid';
@@ -9,6 +9,7 @@ import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import Navbar from '../components/NavBar';
 import axios from 'axios';
+import { CompanyContext } from '../CompanyContext/CompanyContext';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -28,18 +29,22 @@ const useStyles = makeStyles((theme) => ({
 const BikeRegistration = () => {
 	const classes = useStyles();
 
+	const { company } = useContext(CompanyContext);
+	const [ companies ] = company;
+
 	const [ item, setItem ] = React.useState({
 		bikeType: '',
 		brandName: '',
 		bikeDescription: '',
 		keyFeatures: '',
-		specifications: ''
+		specifications: '',
+		companyName: ''
 	});
-	const [ age, setAge ] = React.useState('');
+	const [ companyName, setCompanyName ] = React.useState('');
 	const [ open, setOpen ] = React.useState(false);
 
 	const handleChange1 = (event) => {
-		setAge(event.target.value);
+		setCompanyName(event.target.value);
 	};
 
 	const handleClose = () => {
@@ -119,15 +124,12 @@ const BikeRegistration = () => {
 								open={open}
 								onClose={handleClose}
 								onOpen={handleOpen}
-								value={age}
+								value={companyName}
 								onChange={handleChange1}
 							>
-								<MenuItem value="">
-									<em>None</em>
-								</MenuItem>
-								<MenuItem value={10}>Ten</MenuItem>
-								<MenuItem value={20}>Twenty</MenuItem>
-								<MenuItem value={30}>Thirty</MenuItem>
+								{companies.map((company) => (
+									<MenuItem value={company.companyName}>{company.companyName}</MenuItem>
+								))}
 							</Select>
 						</FormControl>
 					</Grid>
