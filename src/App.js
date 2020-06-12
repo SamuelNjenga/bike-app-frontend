@@ -17,6 +17,7 @@ import Details from './MyAccountComponent/Details';
 import MyAccount from './MyAccountComponent/MyAccount';
 import Order from './MyAccountComponent/Order';
 import SellerRegister from './SellerComponent/SellerRegister';
+import BikeRegistration from './BikeRegistration/BikeRegistration'
 import { UserProvider } from './UserComponent/UserContext';
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
 								<Route path="/login" exact={true} component={Login} />
 								<Route path="/logout" exact={true} component={Logout} />
 								<Route path="/contact" exact={true} component={Contact} />
+								<Route path="/bikeRegistration" exact={true} component={BikeRegistration} />
 							</Switch>
 						</Router>
 					</div>

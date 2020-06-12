@@ -28,6 +28,11 @@ const MyProfile = () => {
 							<Typography>My Reviews</Typography>
 						</Link>
 					</div>
+					<div>
+						<Link to="/bikeRegistration" style={{ textDecoration: 'none' }}>
+							<Typography>Register Bike</Typography>
+						</Link>
+					</div>
 				</Box>
 			</div>
 		</div>

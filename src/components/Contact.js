@@ -33,11 +33,6 @@ const Contact = () => {
 	const handleSubmit = async (event) => {
 		event.preventDefault();
 		const item1 = { ...item };
-		console.log('+++++++');
-		console.log(item1);
-
-		console.log('KEMA', item1);
-		//setUserEmail(item1.email);
 		try {
 			axios.post(`http://localhost:3001/api/contact`, item1);
 		} catch (err) {
