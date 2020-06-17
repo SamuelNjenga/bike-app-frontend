@@ -1,9 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
+import BikeRegistration from './BikeRegistration/BikeRegistration';
 import BikeList from './CartComponents/BikeList';
 import Cart from './CartComponents/Cart';
 import { CartProvider } from './CartComponents/CartContext';
+import { CompanyProvider } from './CompanyContext/CompanyContext';
 import BikeDescription from './components/BikeDescription';
 import CompanyRegistration from './components/CompanyRegistration';
 import Contact from './components/Contact';
@@ -17,9 +19,7 @@ import Details from './MyAccountComponent/Details';
 import MyAccount from './MyAccountComponent/MyAccount';
 import Order from './MyAccountComponent/Order';
 import SellerRegister from './SellerComponent/SellerRegister';
-import BikeRegistration from './BikeRegistration/BikeRegistration';
 import { UserProvider } from './UserComponent/UserContext';
-import { CompanyProvider } from './CompanyContext/CompanyContext';
 function App() {
 	return (
 		<CartProvider>
