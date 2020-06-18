@@ -6,7 +6,7 @@ import axios from 'axios';
 import React, { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import { LoginContext } from '../LoginComponent/LoginContext';
-import Navbar from './NavBar';
+import Navbar from '../NavbarComponent/Navbar';
 export const CompanyRegistration = () => {
 	let history = useHistory();
 	const { isAuthenticated } = useContext(LoginContext);

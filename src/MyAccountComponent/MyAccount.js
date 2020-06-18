@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbar from '../components/NavBar';
+import Navbar from '../NavbarComponent/Navbar';
 import Typography from '@material-ui/core/Typography';
 import MyProfile from './MyProfile';
 import AccountSetting from './AccountSetting';

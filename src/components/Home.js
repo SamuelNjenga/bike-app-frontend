@@ -1,5 +1,6 @@
 import React from 'react';
-import Navbar from './NavBar';
+// import Navbar from './NavBar';
+import Navbar from '../NavbarComponent/Navbar'
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';

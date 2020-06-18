@@ -2,7 +2,7 @@ import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import axios from 'axios';
 import React from 'react';
-import Navbar from '../components/NavBar';
+import Navbar from '../NavbarComponent/Navbar';
 export const ChangePassword = () => {
 	const [ item, setItem ] = React.useState({
 		password: ''

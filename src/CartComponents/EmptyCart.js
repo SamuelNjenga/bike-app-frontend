@@ -1,6 +1,6 @@
 import Typography from '@material-ui/core/Typography';
 import React from 'react';
-import Navbar from '../components/NavBar';
+import Navbar from '../NavbarComponent/Navbar';
 const EmptyCart = () => {
 	return (
 		<div>

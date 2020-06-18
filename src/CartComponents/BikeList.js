@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { CartContext } from './CartContext';
 import Bike from './Bike';
-import Navbar from '../components/NavBar';
+import Navbar from '../NavbarComponent/Navbar';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';

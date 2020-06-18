@@ -2,7 +2,7 @@ import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import React, { useContext } from 'react';
-import Navbar from '../components/NavBar';
+import Navbar from '../NavbarComponent/Navbar';
 import { UserContext } from '../UserComponent/UserContext';
 import axios from 'axios';
 const useStyles = makeStyles((theme) => ({

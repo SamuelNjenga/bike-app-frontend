@@ -11,7 +11,6 @@ import CompanyRegistration from './components/CompanyRegistration';
 import Contact from './components/Contact';
 import Home from './components/Home';
 import Login from './components/Login';
-import Navbar from './components/NavBar';
 import { LoginProvider } from './LoginComponent/LoginContext';
 import Logout from './LogoutComponent/Logout';
 import ChangePassword from './MyAccountComponent/ChangePassword';
@@ -40,7 +39,7 @@ function App() {
 									<Route path="/changepassword" exact={true} component={ChangePassword} />
 									<Route path="/personaldetails" exact={true} component={Details} />
 									<Route path="/bike" exact={true} component={BikeList} />
-									<Route path="/navbar" exact={true} component={Navbar} />
+									{/* <Route path="/navbar" exact={true} component={Navbar} /> */}
 									<Route path="/companyRegistration" exact={true} component={CompanyRegistration} />
 									<Route path="/login" exact={true} component={Login} />
 									<Route path="/logout" exact={true} component={Logout} />

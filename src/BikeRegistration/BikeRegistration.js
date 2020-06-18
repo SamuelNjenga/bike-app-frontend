@@ -6,7 +6,7 @@ import TextField from '@material-ui/core/TextField'
 import axios from 'axios'
 import React, { useContext } from 'react'
 import { CompanyContext } from '../CompanyContext/CompanyContext'
-import Navbar from '../components/NavBar'
+import Navbar from '../NavbarComponent/Navbar'
 
 const useStyles = makeStyles(theme => ({
   root: {
