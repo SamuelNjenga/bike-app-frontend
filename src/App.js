@@ -19,6 +19,7 @@ import Details from './MyAccountComponent/Details';
 import MyAccount from './MyAccountComponent/MyAccount';
 import Order from './MyAccountComponent/Order';
 import SellerRegister from './SellerComponent/SellerRegister';
+import Nav from './NavbarComponent/Navbar';
 import { UserProvider } from './UserComponent/UserContext';
 function App() {
 	return (
@@ -29,6 +30,7 @@ function App() {
 						<div>
 							<Router>
 								<Switch>
+								<Route path="/nav" exact={true} component={Nav} />
 									<Route path="/cart" exact={true} component={Cart} />
 									<Route path="/myaccount" exact={true} component={MyAccount} />
 									<Route path="/bikedescription" exact={true} component={BikeDescription} />
