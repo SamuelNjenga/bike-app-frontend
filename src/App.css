@@ -29,7 +29,7 @@
 }
 .c2{
   background-color:silver;
-  color:white
+  display:flex;
 }
 .cartMain{
   display:flex;

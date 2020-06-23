@@ -13,47 +13,47 @@ const Footer = () => {
 		<div className="c2">
 			<Grid container direction="row" justify="center">
 				<Grid item xs={12} sm={6} lg={3} xl={3}>
-					<Typography>Join us at </Typography>
+					<Typography variant="h6" color="textSecondary">Join us at </Typography>
 					<ListItem>
 						<IconButton>
-							<FaceBookIcon color="primary" />
+							<FaceBookIcon color="textSecondary" />
 						</IconButton>
 					</ListItem>
 					<ListItem>
 						<IconButton>
-							<TwitterIcon color="primary" />
+							<TwitterIcon color="textSecondary" />
 						</IconButton>
 					</ListItem>
 					<ListItem>
 						<IconButton>
-							<InstagramIcon color="primary" />
+							<InstagramIcon color="textSecondary" />
 						</IconButton>
 					</ListItem>
 				</Grid>
 				<Grid item xs={12} sm={6} lg={3} xl={3}>
-					<Typography>ABOUT WAENDESHAJI </Typography>
+					<Typography variant="h6" color="textSecondary">ABOUT WAENDESHAJI </Typography>
 					<ListItem>
-						<Typography>About us</Typography>
+						<Typography variant="subtitle1" color="textSecondary">About us</Typography>
 					</ListItem>
 					<ListItem>
-						<Typography>Terms and Conditions</Typography>
+						<Typography variant="subtitle1" color="textSecondary">Terms and Conditions</Typography>
 					</ListItem>
 					<ListItem>
-						<Typography>Privacy Policy</Typography>
+						<Typography variant="subtitle1" color="textSecondary">Privacy Policy</Typography>
 					</ListItem>
 				</Grid>
 				<Grid item xs={12} sm={6} lg={3} xl={3}>
-					<Typography>How You Can Make Money With Us</Typography>
+					<Typography variant="h6" color="textSecondary">How You Can Make Money With Us</Typography>
 					<Link to="sellerregister" style={{ textDecoration: 'none' }}>
 						<ListItem>
-							<Typography>Sell On Waendeshaji</Typography>
+							<Typography variant="subtitle1" color="textSecondary">Sell On Waendeshaji</Typography>
 						</ListItem>
 					</Link>
 					<ListItem>
-						<Typography>Become an Affiliate Partner</Typography>
+						<Typography variant="subtitle1" color="textSecondary">Become an Affiliate Partner</Typography>
 					</ListItem>
 					<ListItem>
-						<Typography>Become a sales consultant</Typography>
+						<Typography variant="subtitle1" color="textSecondary">Become a sales consultant</Typography>
 					</ListItem>
 				</Grid>
 			</Grid>
