@@ -19,7 +19,7 @@ const MyProfile = () => {
 						</Link>
 					</div>
 					<div>
-						<Link to="/contact" style={{ textDecoration: 'none' }}>
+						<Link to="/savedItems" style={{ textDecoration: 'none' }}>
 							<Typography>Saved Items</Typography>
 						</Link>
 					</div>

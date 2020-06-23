@@ -19,11 +19,6 @@ export const ChangePassword = () => {
 	const handleSubmit = async (event) => {
 		event.preventDefault();
 		const item1 = { ...item };
-		console.log('+++++++');
-		console.log(item1);
-
-		console.log('KEMA', item1);
-		//setUserEmail(item1.email);
 		try {
 			axios.patch(`http://localhost:3001/api/${userEmail}`, item1);
 		} catch (err) {
@@ -59,7 +54,11 @@ export const ChangePassword = () => {
 						/>
 					</div>
 					<div>
-						<Button variant="contained" type="submit" color="primary" style={{ marginTop: 20 }}>
+						<Button
+							variant="contained"
+							type="submit"
+							style={{ marginTop: 20, backgroundColor: 'lightblue' }}
+						>
 							Save
 						</Button>
 					</div>

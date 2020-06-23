@@ -38,11 +38,6 @@ export default function ComposedTextField() {
 	const handleSubmit = async (event) => {
 		event.preventDefault();
 		const item1 = { ...item };
-		console.log('+++++++');
-		console.log(item1);
-
-		console.log('KEMA', item1);
-		//setUserEmail(item1.email);
 		try {
 			axios.patch(`http://localhost:3001/api/user/${userEmail}`, item1);
 		} catch (err) {
@@ -117,7 +112,7 @@ export default function ComposedTextField() {
 							name="Female"
 						/>Female
 					</div>
-					<Button variant="contained" color="primary" type="submit">
+					<Button variant="contained" style={{ backgroundColor: 'lightblue' }} type="submit">
 						SAVE
 					</Button>
 				</form>
