@@ -41,7 +41,7 @@ const Contact = () => {
 	};
 
 	return (
-		<React.Fragment>
+		<>
 			<Navbar />
 			<form className={classes.root}  onSubmit={handleSubmit}>
 				<TextField
@@ -69,11 +69,11 @@ const Contact = () => {
 					value={item.message}
 				/>
 
-				<Button variant="contained" color="primary" type="submit">
+				<Button variant="contained" style={{backgroundColor:'lightblue'}} type="submit">
 					Send
 				</Button>
 			</form>
-		</React.Fragment>
+		</>
 	);
 };
 
