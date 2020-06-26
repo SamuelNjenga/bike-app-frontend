@@ -9,7 +9,7 @@ export const CartProvider = (props) => {
 
 	const setB = () =>
 		axios
-			.get('http://localhost:3001/api/getBikes')
+			.get('http://localhost:3001/api/bikes')
 			.then((res) => {
 				setBikes(res.data);
 				setLoading(false);

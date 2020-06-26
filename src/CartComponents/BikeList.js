@@ -31,7 +31,7 @@ const BikeList = () => {
 				{bikess.map((item, value) => (
 					<Grid key={value} item xs={12} sm={6} lg={3} xl={3}>
 						<Bike
-							key={item.id}
+							key={item._id}
 							name={item.brandName}
 							price={item.price}
 							_id={item._id}
@@ -40,6 +40,7 @@ const BikeList = () => {
 						/>
 					</Grid>
 				))}
+			
 			</Grid>
 		</div>
 	);
