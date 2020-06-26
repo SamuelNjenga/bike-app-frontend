@@ -7,7 +7,7 @@ const CartTotals = () => {
 	const totalPrice = cartss.reduce((acc, curr) => acc + curr.price * curr.count, 0);
 	return (
 		<div className="cartTotals">
-			<Typography variant="subtitle1">
+			<Typography variant="subtitle1" >
 			{totalPrice}
 			</Typography>
 		</div>

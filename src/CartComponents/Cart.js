@@ -1,10 +1,11 @@
-import { Typography } from '@material-ui/core';
+import { Typography, Button } from '@material-ui/core';
 import React, { useContext } from 'react';
 import { CartContext } from './CartContext';
 import CartTotals from './CartTotals';
 import EmptyCart from './EmptyCart';
 import Navbar from '../NavbarComponent/Navbar';
 import { createMuiTheme,responsiveFontSizes,MuiThemeProvider} from '@material-ui/core';
+import Checkout from './Checkout';
 let theme = createMuiTheme();
 theme = responsiveFontSizes(theme);
 const Cart = () => {
@@ -24,16 +25,16 @@ const Cart = () => {
 						</div>
 						<div className="cartMain">
 							<Typography variant="h5">
-								BrandName
+								BRAND NAME
 							</Typography>
 							<Typography variant="h5">
-								Item Price
+								ITEM PRICE
 							</Typography>
 							<Typography variant="h5">
-								Item Count
+								ITEM COUNT
 							</Typography>
 							<Typography variant="h5">
-								Item Totals
+								ITEM TOTALS
 							</Typography>
 						</div>
 					</div>
@@ -57,6 +58,7 @@ const Cart = () => {
 						</div>
 					))}
 					<CartTotals />
+                    <Checkout />
 				</>
 			) : (
 				<EmptyCart />
