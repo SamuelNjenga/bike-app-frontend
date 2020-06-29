@@ -1,11 +1,10 @@
-import { Typography, Button } from '@material-ui/core';
+import { createMuiTheme, MuiThemeProvider, responsiveFontSizes, Typography } from '@material-ui/core';
 import React, { useContext } from 'react';
+import Navbar from '../NavbarComponent/Navbar';
 import { CartContext } from './CartContext';
 import CartTotals from './CartTotals';
-import EmptyCart from './EmptyCart';
-import Navbar from '../NavbarComponent/Navbar';
-import { createMuiTheme,responsiveFontSizes,MuiThemeProvider} from '@material-ui/core';
 import Checkout from './Checkout';
+import EmptyCart from './EmptyCart';
 let theme = createMuiTheme();
 theme = responsiveFontSizes(theme);
 const Cart = () => {

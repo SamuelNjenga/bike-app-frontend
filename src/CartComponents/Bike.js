@@ -32,7 +32,7 @@ const Bike = (props) => {
 		setBikeId(props._id);
 	};
 	const addToCart = () => {
-		const bike = { brandName: props.name, price: props.price, count: props.count };
+		const bike = { brandName: props.name, price: props.price, count: props.count, bikeId: props._id };
 
 		for (let i in cartss) {
 			if (cartss[i].brandName === props.name) {
