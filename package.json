@@ -11,6 +11,7 @@
     "react-elastic-carousel": "^0.4.1",
     "react-material-ui-carousel": "^1.4.3",
     "react-scripts": "3.4.1",
+    "react-stripe-checkout": "^2.6.3",
     "styled-components": "^5.1.1"
   },
   "scripts": {
