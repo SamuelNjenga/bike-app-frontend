@@ -89,7 +89,7 @@ export const CompanyRegistration = () => {
 						/>
 					</div>
 					<div>
-						<Button variant="contained" type="submit" color="primary" style={{ marginTop: 20 }}>
+						<Button variant="contained" style={{backgroundColor:'lightblue',marginTop: 20}} type="submit">
 							Login
 						</Button>
 					</div>
