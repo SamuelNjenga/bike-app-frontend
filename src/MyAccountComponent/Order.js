@@ -6,6 +6,7 @@ const Order = () => {
 		<div>
 			<Navbar />
 			<Typography>My Orders So Far</Typography>
+			
 		</div>
 	);
 };
