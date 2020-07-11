@@ -9,14 +9,22 @@ const Checkout = () => {
 	const { cart, setCart } = useContext(CartContext);
 	const [ cartss ] = cart;
 
-	const totalPrice = cartss.reduce((acc, curr) => acc + curr.price * curr.count, 0);
+	const [ item, setItem ] = React.useState({
+		bikeType: '',
+		brandName: '',
+		price: '',
+		numberOfItems: ''
+	});
 
-	const j = () => {
+	const totalPrice = cartss.reduce((acc, curr) => acc + curr.price * curr.count, 0);
+	const customerIdNumber = JSON.parse(localStorage.getItem('userId'));
+	const j = async () => {
 		for (let i in cartss) {
 			if (cartss[i].bikeId) {
 				const itemsPerBikeId = { count: cartss[i].count };
 				try {
-					axios.patch(`http://localhost:3001/api/selling/${cartss[i].bikeId}`, itemsPerBikeId);
+					await axios.patch(`http://localhost:3001/api/selling/${cartss[i].bikeId}`, itemsPerBikeId);
+					await axios.post(`http://localhost:3001/api/order/${customerIdNumber}/${cartss[i].bikeId}`, itemsPerBikeId);
 				} catch (err) {
 					console.log(err);
 				}

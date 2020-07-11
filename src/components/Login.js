@@ -36,6 +36,7 @@ export const CompanyRegistration = () => {
 					history.push('/');
 					localStorage.setItem('token', resp.data.accessToken);
 					localStorage.setItem('userEmail', item1.email);
+					localStorage.setItem('userId', JSON.stringify(resp.data.data.id));
 					localStorage.setItem('userPassword', item1.password);
 					setAuthentication(true);
 				} else {

@@ -6,7 +6,7 @@ export const CompanyProvider = (props) => {
 
 	useEffect(() => {
 		axios
-			.get(`http://localhost:3001/api/getCompanies`)
+			.get(`http://localhost:3001/api/companies`)
 			.then((res) => {
 				setCompanies(res.data);
 			})
