@@ -7,7 +7,7 @@ import React, { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import { LoginContext } from '../LoginComponent/LoginContext';
 import Navbar from '../NavbarComponent/Navbar';
-export const CompanyRegistration = () => {
+export const UserLogin = () => {
 	let history = useHistory();
 	const { isAuthenticated } = useContext(LoginContext);
 	const [ isAuthenticatedd, setAuthentication ] = isAuthenticated;
@@ -99,4 +99,4 @@ export const CompanyRegistration = () => {
 		</div>
 	);
 };
-export default CompanyRegistration;
+export default UserLogin;
