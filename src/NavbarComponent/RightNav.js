@@ -72,7 +72,7 @@ const RightNav = ({ open }) => {
 					<Link to="/login" style={{ textDecoration: 'none' }}>
 						<li>Log in</li>
 					</Link>
-					<Link to="/signUp" style={{ textDecoration: 'none' }}>
+					<Link to="/userRegistration" style={{ textDecoration: 'none' }}>
 						<li>Sign Up</li>
 					</Link>
 				</>

@@ -1,9 +1,8 @@
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
-import React, { useContext } from 'react';
+import React, { useEffect,useState } from 'react';
 import Navbar from '../NavbarComponent/Navbar';
-import { UserContext } from '../UserComponent/UserContext';
 import axios from 'axios';
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -14,18 +13,19 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function ComposedTextField() {
-	const { user } = useContext(UserContext);
-	const [ users, setUser ] = user;
-	const userEmail = localStorage.getItem('userEmail');
-	const [ item, setItem ] = React.useState({
-		firstName: users.firstName,
-		lastName: users.lastName,
-		userName: users.userName,
-		email: users.email,
-		gender: users.gender
-	});
+   const [item,setItem] = useState([])
+	const email = JSON.parse(localStorage.getItem('userEmail'));
 
-	// const [ name, setName ] = React.useState('Composed TextField');
+	useEffect(() => {
+		axios
+			.get(`http://localhost:3001/api/getUserById/${email}`)
+			.then((res) => {
+				setItem(res.data);
+			})
+			.catch((e) => {
+				console.log(e);
+			});
+	}, [email]);
 	const classes = useStyles();
 
 	const handleChange = (event) => {
@@ -39,7 +39,7 @@ export default function ComposedTextField() {
 		event.preventDefault();
 		const item1 = { ...item };
 		try {
-			axios.patch(`http://localhost:3001/api/user/${userEmail}`, item1);
+			axios.patch(`http://localhost:3001/api/user/${email}`, item1);
 		} catch (err) {
 			console.log(err);
 		}

@@ -4,21 +4,18 @@ export const UserContext = createContext();
 export const UserProvider = (props) => {
 	const [ user, setUser ] = useState([]);
 
-	const email = localStorage.getItem('userEmail');
+	const email = JSON.parse(localStorage.getItem('userEmail'));
 
-	useEffect(
-		() => {
-			axios
-				.get(`http://localhost:3001/api/getUserById/${email}`)
-				.then((res) => {
-					setUser(res.data);
-				})
-				.catch((e) => {
-					console.log(e);
-				});
-		},
-		[ email ]
-	);
+	useEffect(() => {
+		axios
+			.get(`http://localhost:3001/api/getUserById/${email}`)
+			.then((res) => {
+				setUser(res.data);
+			})
+			.catch((e) => {
+				console.log(e);
+			});
+	}, []);
 	return (
 		<UserContext.Provider
 			value={{

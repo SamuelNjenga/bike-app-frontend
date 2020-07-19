@@ -8,6 +8,7 @@ import { CartProvider } from './CartComponents/CartContext';
 import { CompanyProvider } from './CompanyContext/CompanyContext';
 import { OrderProvider } from './OrdersContext/OrderContext';
 import BikeDescription from './components/BikeDescription';
+import UserRegistration from './UserComponent/UserRegistration';
 import CompanyRegistration from './components/CompanyRegistration';
 import Contact from './components/Contact';
 import Home from './components/Home';
@@ -51,6 +52,7 @@ function App() {
 										<Route path="/logout" exact={true} component={Logout} />
 										<Route path="/contact" exact={true} component={Contact} />
 										<Route path="/bikeRegistration" exact={true} component={BikeRegistration} />
+										<Route path="/userRegistration" exact={true} component={UserRegistration} />
 									</Switch>
 								</Router>
 							</div>
