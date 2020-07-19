@@ -35,7 +35,7 @@ export const UserLogin = () => {
 				if (resp.status === 200) {
 					history.push('/');
 					localStorage.setItem('token', resp.data.accessToken);
-					localStorage.setItem('userEmail', item1.email);
+					localStorage.setItem('userEmail', JSON.stringify(resp.data.data.email));
 					localStorage.setItem('userId', JSON.stringify(resp.data.data.id));
 					localStorage.setItem('userPassword', item1.password);
 					setAuthentication(true);
