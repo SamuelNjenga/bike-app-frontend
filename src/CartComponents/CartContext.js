@@ -21,7 +21,11 @@ export const CartProvider = (props) => {
 		setB();
 	}, []);
 
-	const t = () => {};
+	const t = bikes.map(bike => bike._id)
+
+	function newTodo(name){
+		return {id : Date.now(), name:name, complete:false}
+	}
 
 	return (
 		<CartContext.Provider
@@ -29,7 +33,7 @@ export const CartProvider = (props) => {
 				bikes: [ bikes, setBikes ],
 				isLoading: [ isLoading, setLoading ],
 				cart: [ cart, setCart ],
-				t: t(),
+				t: t,
 				bikeIdNumber: [ bikeId, setBikeId ]
 			}}
 		>
